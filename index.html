@@ -264,18 +264,18 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -292,6 +292,113 @@ mjx-container[display="true"] + br {
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/03/04/2026-3-4-b%E7%AB%99banner%E5%9B%BE%E5%8A%A8%E7%94%BB%E5%AE%9E%E7%8E%B0.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/qq.jpg">
+      <meta itemprop="name" content="瑞典厨师长">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="obstacle的个人空间">
+      <meta itemprop="description" content="不要温和地走进那个良夜">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | obstacle的个人空间">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2026/03/04/2026-3-4-b%E7%AB%99banner%E5%9B%BE%E5%8A%A8%E7%94%BB%E5%AE%9E%E7%8E%B0.html" class="post-title-link" itemprop="url">b站banner图动画实现</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2026-03-04 23:41:42" itemprop="dateCreated datePublished" datetime="2026-03-04T23:41:42+08:00">2026-03-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-03-05 21:09:59" itemprop="dateModified" datetime="2026-03-05T21:09:59+08:00">2026-03-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>712</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>很早之前就看到网页版b站的banner图有动画效果，鼠标在上面移动banner图也会动起来，形成的效果非常好看，当时只是感觉有意思没有多想，现在就突然想到这件事了就想着干脆自己学习复刻一下吧，毕竟是前端内容，内容都白送了，直接就能照着代码去理解，然后就自己做了一个比较接近的banner图动画。</p>
+<h1 id="复刻过程"><a href="#复刻过程" class="headerlink" title="复刻过程"></a>复刻过程</h1><p>复刻大致分为三步吧</p>
+<h2 id="1-动画原理"><a href="#1-动画原理" class="headerlink" title="1.动画原理"></a>1.动画原理</h2><p>我们直接右键banner图然后检查就能找到其对应的代码部分，初步看了下发现，这个动画效果是由一张底图，加很多图层实现的，随着鼠标的移动不同的图层有着不同的运动，外加一些高斯模糊最后形成了动画，在我们移开鼠标后这些图层会缓慢平滑回正，形成美观的视觉效果。</p>
+<h2 id="2-素材获取"><a href="#2-素材获取" class="headerlink" title="2.素材获取"></a>2.素材获取</h2><p>想制作banner图动画总得有banner图吧，这里我本来是想自己去做一批图片出来的，发现这个分辨率的图片有点难以实现，调了好久做出来的图片都不是很满意，索性就放弃了。既然有现成的，<del>我直接用b站的图片就好了</del>，同样这些东西都放在前端了，右键banner图然后点击“检查”就能找到图片对应所在的位置了。现在ai这么厉害，直接丢给他帮我们批量下载图片即可，有想要图片的可以去文末发的链接获取</p>
+<h2 id="3-动画实现"><a href="#3-动画实现" class="headerlink" title="3.动画实现"></a>3.动画实现</h2><p>动画实现主要分为三部分，分别是鼠标移入，鼠标移动，鼠标移出。在鼠标移入的时候获取鼠标当前位置，这样后面鼠标移动的时候就可以比较和最初移入的位移差然后根据一个比例去换算得到图片的位移，然后给每个图层都设置不同的移动参数和方向，就能最终形成动画效果了。具体一些设置文末链接里代码都有对应注释，包括绝大部分图片对应。</p>
+<h2 id="4-大致效果"><a href="#4-大致效果" class="headerlink" title="4.大致效果"></a>4.大致效果</h2>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/obst4cle/bilibili-banner-animate">obst4cle&#x2F;bilibili-banner-animate</a>也可以通过此链接获取代码和原图。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1352,104 +1459,6 @@ mjx-container[display="true"] + br {
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/11/30/1.%E5%9B%BE%E7%89%87.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/qq.jpg">
-      <meta itemprop="name" content="瑞典厨师长">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="obstacle的个人空间">
-      <meta itemprop="description" content="不要温和地走进那个良夜">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | obstacle的个人空间">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/11/30/1.%E5%9B%BE%E7%89%87.html" class="post-title-link" itemprop="url">图片无法加载解决方法</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-11-30 23:01:05" itemprop="dateCreated datePublished" datetime="2024-11-30T23:01:05+08:00">2024-11-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-26 13:13:27" itemprop="dateModified" datetime="2025-05-26T13:13:27+08:00">2025-05-26</time>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>439</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <hr>
-<h2 id="1-图片"><a href="#1-图片" class="headerlink" title="1.图片"></a>1.图片</h2><p>往typora插入图片，图片文件夹一定要和创建的.md文件夹放在同一个文件夹下。不然文件移动位置后图片会因找不到地址而消失</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">格式！[提示文字](图片地址)      即先！然后快捷键ctrl+k</span><br><span class="line">例如：![伊蕾娜](D:\blog\source\images\Elaina.jpg)</span><br></pre></td></tr></table></figure>
-
-<img src="/2024/11/30/1.%E5%9B%BE%E7%89%87/20240913_122405110_iOS.png" class="" title="20240913_122405110_iOS">
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>相信很多人尝试上面图片的插入方法会遇到在typora能正常显示图片，但在网页上图片却无法加载。这是因为上述地址如D:\blog\source\images\Elaina.jpg为本地地址，而hexo+github搭建的博客并不能访问本地地址所以自然无法成功。</p>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>最简单粗暴的方法就是直接将图片拖到typora中，typora会直接创建博客文章同名的文件夹存放图片。但是就是感觉文章写多了有点乱乱的。</p>
-<h2 id="特别注意"><a href="#特别注意" class="headerlink" title="特别注意"></a>特别注意</h2><p>说来也巧本以为早就解决了图片的问题结果又出现了，这次经过更长时间捣鼓得出结论上面例子里的【提示文字】不能为纯数字不然部署到GitHub上就被认定为width而不是title导致图片无法加载。 </p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -1462,7 +1471,7 @@ mjx-container[display="true"] + br {
 
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2025</span>
+    <span itemprop="copyrightYear">2026</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>
@@ -1473,13 +1482,13 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">54k</span>
+    <span title="站点总字数">55k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:38</span>
+    <span title="站点阅读时长">1:39</span>
   </span>
 </div>
 <div class="busuanzi-count">
