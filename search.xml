@@ -415,4 +415,26 @@
         <tag>frontend</tag>
       </tags>
   </entry>
+  <entry>
+    <title>powershell中文乱码改善</title>
+    <url>/2026/05/17/powershell%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E6%94%B9%E5%96%84.html</url>
+    <content><![CDATA[<h1 id="powershell中文乱码改善"><a href="#powershell中文乱码改善" class="headerlink" title="powershell中文乱码改善"></a>powershell中文乱码改善</h1><p>因为ai发展越来越快，ai工具也在快速发展，像现在主流的claude code，codex等，那在使用这些cli的过程中就会遇到中文乱码的问题，实际上影响不大，<del>因为都交给ai去看了（</del>，但是有时候ai运行替换命令之类的就会把这些乱码替换到项目里，还是很影响效率的，所以还是修复下较好，出现这个问题多半是因为powershell版本太老导致的，只要更新就好了。</p>
+<h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><p>先终端输入 $PSVersionTable.PSVersion 查看自己的powershell版本，也是如下图所示为5.1。同时上面还有信息提示安装最新的powershell</p>
+
+
+
+
+<p>接下来就在终端执行winget install –id Microsoft.PowerShell –source winget，安装新版本的powershell，没有winget的自行查阅解决<br>下载完之后重启打开终端点击打开新标签页会发现有两个图标不一样的powershell，windows powershell就是5.1的那个版本，而另一个powershell就是我们刚下载的，在打开新标签页同样的位置下面有设置选项，在启动界面把默认启动换为新安装的powershell就可以了。</p>
+<p>当然为了更进一步确保减少中文乱码的问题，让ai帮忙进一步改善。打开新安装的终端输入notepad $PROFILE，然后在弹出的页面把下述内容输进去</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[Console]::InputEncoding = [System.Text.UTF8Encoding]::new($false)</span><br><span class="line">[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false)</span><br><span class="line">$OutputEncoding = [System.Text.UTF8Encoding]::new($false)</span><br><span class="line">$env:PYTHONUTF8 = "1"</span><br><span class="line">$env:PYTHONIOENCODING = "utf-8"</span><br></pre></td></tr></table></figure>
+
+<p>保存重启就好了，这样每次打开powershell7，上述内容都会自动生效。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+      </tags>
+  </entry>
 </search>
